@@ -1,6 +1,6 @@
 from threading import Thread
 
-from libs.info_endpoint.email import EmailClient
+from libs.clients.web import WebClient
 from libs.amazon import BoxFreshSpencerBrown46
 from libs.configuration import Configuration
 from libs.webdriver import WebDriver
@@ -24,13 +24,11 @@ class Informer(Thread):
     info_sites = []
     sleep_time = 60 * 60  # every hour
 
-    email_endpoint = None
-
-    def __init__(self, driver):
+    def __init__(self, driver, info_sites=[]):
         Thread.__init__(self)
-        self.info_sites.append(InfoSite(BoxFreshSpencerBrown46, EmailClient()))
+        self.info_sites = info_sites
 
-    def run(self) -> None:
+    def run(self):
         while self.do_run:
             for site in self.info_sites:
                 print(site.check())
@@ -44,6 +42,7 @@ if __name__ == '__main__':
     # c.headless = True
     d = WebDriver.build(c)
     i = Informer(d)
+    i.info_sites.append(InfoSite(BoxFreshSpencerBrown46, WebClient("https://target.site/boop")))
     try:
         i.run()
     except KeyboardInterrupt:
