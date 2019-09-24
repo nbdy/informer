@@ -1,5 +1,6 @@
 from requests import post
 from json import dumps
+from os import listdir
 
 
 
@@ -13,5 +14,8 @@ class Client(object):
             self.url = "https://"
         self.url += (host + ":" + str(port)) + "/api/"
 
-    def add(self, url, exists, endpoint):
-        if endpoint in
+    def add(self, url, xpath, value, client_config):
+        if not client_config["name"] in listdir("clients/"):
+            return False
+
+
