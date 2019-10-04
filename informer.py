@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from libs.configuration import Configuration
 from libs.webdriver import WebDriver
 from libs.api import API
