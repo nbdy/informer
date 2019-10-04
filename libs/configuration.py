@@ -4,7 +4,7 @@ from sys import argv
 class Configuration(object):
     headless = False
     driver = "chrome"
-    executable_path = "chrome/linux/chromedriver"
+    executable_path = "driver/chromedriver"
 
     @staticmethod
     def help():
