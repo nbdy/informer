@@ -6,7 +6,8 @@ i want to get notified when products become available
 ### how ...
 #### ... to get started
 ```
-./setup.sh
+(optional)
+pip install git+https://github.com/smthnspcl/seleniumloader
 ```
 
 #### ... to run

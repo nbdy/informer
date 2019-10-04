@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+try:
+    import seleniumloader.loader as ld
+    ld.Loader.fetch()
+except ImportError:
+    print("could not load seleniumloader")
+    print("won't automatically load selenium drivers")
+    pass
+
 from libs.configuration import Configuration
 from libs.webdriver import WebDriver
 from libs.api import API
