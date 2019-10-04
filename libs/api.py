@@ -1,7 +1,7 @@
 from . import Runnable
 from flask import Flask, request, make_response
 from json import dumps, loads
-from os import listdir, getcwd
+from os import getcwd
 from os.path import abspath
 
 
