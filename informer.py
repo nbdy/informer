@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 try:
-    import seleniumloader.loader as ld
-    ld.Loader.fetch()
+    import seleniumloader
+    seleniumloader.main()
 except ImportError:
     print("could not load seleniumloader")
     print("won't automatically load selenium drivers")
