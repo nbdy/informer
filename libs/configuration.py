@@ -17,6 +17,7 @@ class Configuration(object):
         print("\t\tdefault:", Configuration.executable_path)
         print("\t--headless\trun browser headless")
         print("\t\tpossible arguments: none")
+        exit()
 
     @staticmethod
     def parse():
