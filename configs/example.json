@@ -1,0 +1,9 @@
+[
+  {
+    "pid": "product id",
+    "targets": [
+      {"by": "id", "id": "native_size_name_6", "fetch": "class", "name": "brown 46", "desired_value": "dropdownAvailable"},
+      {"by": "id", "id": "native_size_name_7", "fetch": "class", "name": "brown 47", "desired_value": "dropdownAvailable"}
+    ]
+  }
+]

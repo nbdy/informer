@@ -19,7 +19,7 @@ class AmazonProduct(SiteObject):
         print("unavailable")
 
     def dropdown_available(self):
-        if self.element.get_attribute("class") == self.DROPDOWN_AVAILABLE:
+        if self._element.get_attribute("class") == self.DROPDOWN_AVAILABLE:
             self.on_dropdown_available()
         else:
             self.on_dropdown_unavailable()
@@ -27,23 +27,3 @@ class AmazonProduct(SiteObject):
     def get(self):
         SiteObject.get(self)
         self.dropdown_available()
-
-
-class AmazonDEProduct(AmazonProduct):
-    cc = "de"
-
-
-class AmazonCOMProduct(AmazonProduct):
-    cc = "com"
-
-
-class BoxFreshSpencer(AmazonDEProduct):
-    product_id = "B071GC749G"
-
-
-class BoxFreshSpencerBrown46(BoxFreshSpencer):
-    target = "native_size_name_6"
-
-
-class BoxFreshSpencerBrown40(BoxFreshSpencer):
-    target = "native_size_name_0"
