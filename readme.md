@@ -14,15 +14,12 @@ pip install git+https://github.com/smthnspcl/seleniumloader
 ```
 ./informer.py --help
 
-usage: python3 Informer.py {arguments}
-	-h	--help
-	-d	--driver	sets the webdriver
-		default: chrome
-		possible arguments: chrome, c, firefox, f
-	-e	--executable-path	path to driver
-		default: chrome/linux/chromedriver
-	--headless	run browser headless
-		possible arguments: none
+usage: ./informer.py {arguments}
+	{arguments}		    {info}
+	-sc 	--site-config 	    can be used more than once
+	-h 	--headless
+	-d 	--driver
+	-e 	--executable_path
 ```
 
 #### ... to add new products

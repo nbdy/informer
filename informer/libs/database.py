@@ -32,10 +32,13 @@ class DatabaseSiteObject(object):
 
 
 class Database(object):
+    TABLE_SITE_CONFIGURATIONS = "site_configurations"
+
     db = None
 
     def __init__(self):
         self.db = dataset.connect("sqlite:///storage.db")
 
-    def add_watcher(self, config):
-        pass
+    def add_site_configuration(self, config):
+        tbl = self.db[Database.TABLE_SITE_CONFIGURATIONS]
+        tbl.insert(config)

@@ -36,9 +36,23 @@ class Configuration(object):
             if a in ["-h", "--help"]:
                 help()
             elif a in ["-sc", "--site-config"]:
-                cfg._site_configs += json.load(open(argv[i + 1]))
+                p = argv[i + 1]
+                if not p.startswith("/"):
+                    print("need absolute path to config file.")
+                    exit()
+                else:
+                    cfg._site_configs += json.load(open(p))
             i += 1
         return cfg
+
+    def get_site_configs(self):
+        return self._site_configs
+
+    def add_site_config(self, cfg):
+        self._site_configs.append(cfg)
+
+    def set_webdriver_headless(self, value):
+        self._web_driver.headless = value
 
 
 if __name__ == '__main__':
