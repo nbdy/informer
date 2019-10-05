@@ -26,4 +26,4 @@ usage: python3 Informer.py {arguments}
 ```
 
 #### ... to add new products
-[check here](https://github.com/smthnspcl/informer/blob/master/libs/amazon.py#L78) 
+[check here](https://github.com/smthnspcl/informer/blob/master/libs/amazon.py#L78)
