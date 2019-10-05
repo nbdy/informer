@@ -1,14 +1,17 @@
-from . import Runnable
 from flask import Flask, request, make_response
 from json import dumps, loads
 from os import getcwd
 from os.path import abspath
+
+from . import Runnable
+from .sites import sites
 
 
 class API(Runnable):
     app = None
 
     callback_add = None
+    loaded_sites = []
 
     def __init__(self, host="0.0.0.0", port=58008, debug=False, threaded=True, callback_add=None):
         Runnable.__init__(self)
@@ -37,14 +40,12 @@ class API(Runnable):
     def get_current_path():
         return abspath(getcwd()) + "/"
 
-    def set_callback_add(self, callback):
-        pass
-
     def add(self, data):
         if data is None or not self.check_dict(data, ["name", "config"]):
             return False
-
-        return True
+        if data["name"] not in sites:
+            return False
+        return self.callback_add(data)
 
     def _init_app(self):
         @self.app.route("/api/add", methods=["POST"])

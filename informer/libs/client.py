@@ -1,7 +1,4 @@
-from requests import post
-from json import dumps
 from os import listdir
-
 
 
 class Client(object):
