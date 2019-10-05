@@ -1,15 +1,8 @@
 #!/usr/bin/python3
 
-try:
-    import seleniumloader
-    seleniumloader.main()
-except ImportError:
-    print("could not load seleniumloader")
-    print("won't automatically load selenium drivers")
-    pass
-
-from libs.configuration import Configuration
-from libs.webdriver import WebDriver
+from seleniumwrapper.configuration import Configuration
+from seleniumwrapper.webdriver import WebDriver
+from seleniumwrapper import fetch as fetch_webdriver
 from libs.api import API
 
 
@@ -42,6 +35,7 @@ class Informer(object):
 
 
 if __name__ == '__main__':
+    fetch_webdriver()
     c = Configuration.parse()
     # c.headless = True
     i = Informer(c)

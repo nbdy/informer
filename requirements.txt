@@ -1,4 +1,4 @@
 selenium
 flask
 requests
-seleniumloader
+seleniumwrapper
