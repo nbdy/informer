@@ -1,5 +1,5 @@
 ## informer
-[![Build Status](http://build.eberlein.io:8080/job/informer/badge/icon)](http://build.eberlein.io:8080/job/informer/)
+[![Build Status](http://build.eberlein.io:8080/job/python_informer/badge/icon)](http://build.eberlein.io:8080/job/python_informer/)
 ### why
 i want to get notified when products become available
 
