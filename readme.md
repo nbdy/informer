@@ -23,4 +23,4 @@ usage: ./informer.py {arguments}
 ```
 
 #### ... to add new products
-[check here](https://github.com/smthnspcl/informer/blob/master/libs/amazon.py#L78)
+[check here](https://github.com/nbdy/informer/blob/master/libs/amazon.py#L78)
